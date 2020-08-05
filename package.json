@@ -1,0 +1,30 @@
+{
+  "name": "db4-project",
+  "version": "1.0.0",
+  "description": "\"This a complete set up For DB4\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tereamarie/node-db4-project.git"
+  },
+  "author": "Teresa Hotchkiss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tereamarie/node-db4-project/issues"
+  },
+  "homepage": "https://github.com/Tereamarie/node-db4-project#readme",
+  "devDependencies": {
+    "nodeman": "^1.1.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.0.0",
+    "knex": "^0.21.2",
+    "pg": "^8.3.0",
+    "psql": "0.0.1",
+    "sqlite3": "^5.0.0"
+  }
+}
