@@ -1,52 +1,31 @@
 // Update with your config settings.
 
 module.exports = {
+  // Development configuration options
   development: {
     client: "sqlite3",
-    connection: {
-      filename: "./migrations/dev.db3",
-    },
+    // required if you want to set null as the default value in the DB
     useNullAsDefault: true,
-    migrations: {
-      directory: "./migrations",
-    },
-
+    // Allows us to use foreign keys (creates a unique combination of two or more columns)
     pool: {
       afterCreate: (conn, done) => {
         conn.run("PRAGMA foreign_keys = ON", done);
       },
     },
-  },
-
-  staging: {
-    client: "postgresql",
+    // where the database table is stored
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password",
+      filename: "./data/recipes.db3",
     },
-    pool: {
-      min: 2,
-      max: 10,
-    },
+
     migrations: {
-      tableName: "knex_migrations",
+      // directory --> folder
+      directory: "./data/migrations",
+    },
+
+    seeds: {
+      directory: "./data/seeds",
     },
   },
 
-  production: {
-    client: "postgresql",
-    connection: {
-      database: "my_db",
-      user: "username",
-      password: "password",
-    },
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    migrations: {
-      tableName: "knex_migrations",
-    },
-  },
+  // production config
 };
