@@ -1,25 +1,24 @@
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex("recipes_ingredients")
+  return knex("instructions")
     .truncate()
     .then(function () {
       // Inserts seed entries
-      return knex("recipes_ingredients").insert([
-        { recipe_id: 1, ingredient_id: 1, quantity: 16, measurement: "oz" },
-        { recipe_id: 1, ingredient_id: 2, quantity: 1, measurement: "can" },
+      return knex("instructions").insert([
+        { instruction: "Boil water in pan" },
+        { instruction: "Cook noddles according to package" },
+        { instruction: "Heat pasta sauce" },
+        { instruction: "Combine pasta and sauce" },
+        { instruction: "Serve" },
+        { instruction: "Cook carne asada" },
+        { instruction: "Cut up lettuce" },
+        { instruction: "Make your freakin' tacos" },
         {
-          recipe_id: 1,
-          ingredient_id: 3,
-          quantity: 1,
-          measurement: "large pot",
+          instruction:
+            "Put peanut butter and jelly between two pieces of bread",
         },
-        { recipe_id: 2, ingredient_id: 4, quantity: 4, measurement: "lbs" },
-        { recipe_id: 2, ingredient_id: 5, quantity: 2, measurement: "heads" },
-        { recipe_id: 3, ingredient_id: 5, quantity: 2, measurement: "pieces" },
-        { recipe_id: 3, ingredient_id: 6, quantity: 16, measurement: "oz" },
-        { recipe_id: 3, ingredient_id: 7, quantity: 0.5, measurement: "cup" },
-        { recipe_id: 3, ingredient_id: 8, quantity: 0.75, measurement: "cup" },
+        { instruction: "Eat sandwhich" },
       ]);
     });
 };
